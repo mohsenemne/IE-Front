@@ -3,6 +3,7 @@ body {
   margin-right: 0px;
 }
 body #top-level {
+  font-family: IRANSans; direction: rtl;
   position: absolute;
   top: 0;
   right: 0;
@@ -20,6 +21,10 @@ body #top-level #top-bar {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+}
+body #top-level #top-bar div {
+  margin: 5%;
+  margin-right: 10%
 }
 body #top-level #top-bar #links {
   display: flex;
@@ -160,6 +165,10 @@ body #top-level #container #info-container #job-info #offer {
   flex-direction: column;
   justify-content: flex-start;
   margin-right: 5%;
+}
+body #top-level #container #info-container #job-info #offer #offer-title img {
+  width: 10px;
+  height: 10px;
 }
 body #top-level #container #info-container #job-info #offer #form {
   margin-top: -15px;  
