@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html dir="rtl" lang="ar">
 	<head>
 		<title>JobooNJa</title>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../reset.css" />
 		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" type="text/css" href="../assets/fonts/iransans-fonts/fonts.css">
 	</head>
 	<body>
 		<div id="top-level">
 
 			<nav id="top-bar">
-				<div id="links">
-					<a><p> about </p></a>
-					<a><p> account</p></a>
-				</div>
 				<div> <img src="../assets/logo/logo v1.png"> </div>
+				<div id="links">
+					<a><p> حساب کاربری </p></a>
+					<a><p> خروج </p></a>
+				</div>
 			</nav>
 
 			<div id="container">
@@ -21,23 +23,39 @@
 				<div id="top-blue"></div>
 				<div id="info-container">
 					<div id="job-info">
-						<div id="description">
-							<div id="image">
-								<img src="./">
-							</div>
+						<div id="description">	
 							<div id="details">
-								<h2>project title</h2>
-								<h5>budget</h5>
-								<h5>deadline</h5>
-								<h6> description</h6>
-								<p style="text-align: justify;"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+								<h2 id="title">پروژه‌ی طراحی سایت</h2>
+								<h5 class="property"><img src="../assets/icons/deadline.png"><font color="#636363"><b> زمان باقی‌مانده: <b> ۱۷ دقیقه و ۲۵ ثانیه </font></h5>
+								<h5 class="property"><img src="../assets/icons/money-bag.png"><font color="#32928F"> بودجه: ۲۵۰۰ تومان</font></h5>
+								<h3 id="explanation"> توضیحات</h3>
+								<p> لورم ایپسون متن ساختگی با تولید نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است.</p>
+							</div>
+							<div id="image">
+								<img src="../assets/pics/project.png">
 							</div>
 						</div>
 						<div id="skills">
-
+							<div id="skills-title"><h4><font color="#69A7A1"> مهارت‌های لازم:</font></h4></div>
+							<div id="skill-items-container">
+								<span id="skill-items">
+									<span class="skill">
+										<span class="name">HTML</span> <span class="point">5</span>
+									</span>
+									<span class="skill">
+										<span class="name">CSS</span> <span class="point">3</span>
+									</span>
+									<span class="skill">
+										<span class="name">JavaScript</span> <span class="point">16</span>
+									</span>
+									<span class="skill">
+										<span class="name">TypeScript</span><span class="point">2</span>
+									</span>											
+								</span>
+							</div>
 						</div>
 						<div id="offer">
-							<input type="number" placeholder="your offer"> <button> submit </button>
+							<input type="number" placeholder="پیشنهاد خود را وارد کنید" > <button> submit </button>
 						</div>
 					</div>
 				</div>
