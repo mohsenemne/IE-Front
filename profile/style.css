@@ -1,0 +1,179 @@
+body {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+body #top-level {
+  font-family: IRANSans; direction: rtl;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+body #top-level #top-bar {
+  background-color: white;
+  height: 5%;
+  min-height: 41px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+body #top-level #top-bar div {
+  margin: 5%;
+  margin-right: 10%
+}
+body #top-level #top-bar #links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5%;
+  margin-left: 10%; 
+}
+body #top-level #top-bar #links p {
+  font-family: "Calibri" sans-serif;
+  margin: 5px 5px 5px 5px;
+}
+body #top-level #top-bar img {
+  width: 100px;
+  height: 40px;
+}
+body #top-level #container {
+  height: 100%;
+  margin-bottom: 50px;
+  background-color: white;
+}
+body #top-level #container #fixer {
+  height: 5%;
+  min-height: 41px;
+  width: 100%;
+}
+body #top-level #container #top-blue {
+  background-color: #B9EEF2;
+  height: 20%;
+  min-height: 90px;
+  max-height: 120px;
+  margin-bottom: -70px;
+}
+body #top-level #container #info-container {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+body #top-level #container #info-container #user-info {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+body #top-level #container #info-container #user-info #description {
+  width: 100%;
+  height: calc();
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+body #top-level #container #info-container #user-info #description #image {  
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  max-width: 150px;
+}
+body #top-level #container #info-container #user-info #description #image img {
+  height: 100%;
+  width: 100%;
+  min-width: 60px;
+  min-height: 60px;
+}
+body #top-level #container #info-container #user-info #description #details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 70px 10px 10px 10px;
+  height: 100%;
+}
+
+body #top-level #container #info-container #user-info #select-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+body #top-level #container #info-container #user-info #select-container #form {
+    padding: 2px 2px 2px 2px;
+    background-color: rgb(252, 252, 252);
+    border: 1px rgb(226, 226, 226) solid;
+}
+body #top-level #container #info-container #user-info #select-container #form select{
+    background-color: #F9F9F9;
+    border: 1px #eeeeee solid;
+    height: 35px;
+}
+body #top-level #container #info-container #user-info #select-container #form button{
+    background-color: #0698A7;
+    height: 35px;
+}
+
+
+body #top-level #container #info-container #user-info #skill-items-container {
+  direction: ltr;
+  align-self: flex-end;
+}
+body #top-level #container #info-container #user-info #skill-items-container .skill {
+  border-radius: 5% 5% 5% 5%;
+  padding: 2px 2px 2px 2px;
+  margin-right: 15px;
+  margin-top: 5px; 
+  margin-bottom: 5px;
+  border: 1px rgb(177, 177, 177) solid;
+  background-color: white;
+}
+
+body #top-level #container #info-container #user-info #skill-items-container .point {
+  border-radius: 5% 5% 5% 5%;
+  padding: 1px 1px 1px 1px;
+  background-color: #BCEFF3;
+}
+
+/* body #top-level #container #info-container #user-info #skill-items-container #a {
+  border-radius: 5% 5% 5% 5%;
+  padding: 1px 1px 1px 1px;
+  background-color: green;
+}
+body #top-level #container #info-container #user-info #skill-items-container #b {
+  border-radius: 5% 5% 5% 5%;
+  padding: 1px 1px 1px 1px;
+  background-color: green;
+}
+body #top-level #container #info-container #user-info #skill-items-container #d {
+  border-radius: 5% 5% 5% 5%;
+  padding: 1px 1px 1px 1px;
+  background-color: red;
+} */
+
+body #top-level #copyright-notice {
+  position: fixed;
+  bottom: 0;
+  background-color: #363636;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

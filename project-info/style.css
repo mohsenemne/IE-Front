@@ -60,7 +60,6 @@ body #top-level #container #top-blue {
   margin-bottom: -70px;
 }
 body #top-level #container #info-container {
-  /* background-color: #F6F6F6; */
   width: 100%;
   min-height: 400px;
   display: flex;
