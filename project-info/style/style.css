@@ -3,10 +3,11 @@ body {
   direction: rtl;
   margin-left: 0px;
   margin-right: 0px;
+  background-color: #F6F6F6;
 }
 
 body font {
-  font-weight: 300;
+  font-weight: 91;
 }
 
 body a {
@@ -68,18 +69,12 @@ body #top-level #top-bar #links {
 }
 
 body #top-level #top-bar #links p {
-  margin: 1em;
+  margin: 5px 5px 5px 5px;
 }
 
 body #top-level #top-bar img {
   width: 7.5em;
   height: 2.5em;
-}
-
-body #top-level #container {
-  height: 100%;
-  margin-bottom: 7%;
-  background-color: #F6F6F6;
 }
 
 body #top-level #container #fixer {
@@ -117,6 +112,7 @@ body #top-level #container #info-container {
 
 body #top-level #container #info-container #job-info {
   width: 80%;
+  background-color: white;
   height: 100%;
   border: 1px solid #e3e3e3;
   border-radius: 1%;
@@ -130,7 +126,6 @@ body #top-level #container #info-container #job-info {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background-color: white;
 }
 
 body #top-level #container #info-container #job-info #description {
@@ -233,20 +228,29 @@ body #top-level #container #info-container #job-info #skills #skill-items-contai
 
 body #top-level #container #info-container #job-info #skills #skill-items-container .skill {
   border-radius: 2%;
-  padding: 2px;
+  padding-left: 0.5em;
+  padding-top: 0.3em;
   margin-right: 1em;
   margin-top: 5px;
   margin-bottom: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   background-color: white;
+  vertical-align: 0px;
 }
 
 body #top-level #container #info-container #job-info #skills #skill-items-container .point {
-  border-radius: 5% 5% 5% 5%;
+  border-radius: 5%;
   padding: 0em 0.5em 0em 0.5em;
   margin-left: 0.5em;
   background-color: #BCEFF3;
+  height: 1.5em;
+  font-size: 1em;
+  color: #539B98;
+  border: none;
 }
 
 body #top-level #container #info-container #job-info #offer {
@@ -285,7 +289,6 @@ body #top-level #container #info-container #job-info #offer button {
 }
 
 body #top-level #container #copyright-notice {
-  bottom: 0;
   margin-top: 10vh;
   background-color: #363636;
   width: 100%;
