@@ -6,7 +6,7 @@ body {
 }
 
 body font {
-  font-weight: 91;
+  font-weight: 300;
 }
 
 body a {
@@ -23,7 +23,7 @@ body #top-level {
 
 body #top-level #top-bar {
   background-color: white;
-  height: 5vh;
+  height: 7%;
   min-height: 41px;
   width: 100%;
   position: fixed;
@@ -41,6 +41,8 @@ body #top-level #top-bar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 body #top-level #top-bar div {
@@ -66,7 +68,7 @@ body #top-level #top-bar #links {
 }
 
 body #top-level #top-bar #links p {
-  margin: 5px 5px 5px 5px;
+  margin: 1em;
 }
 
 body #top-level #top-bar img {
@@ -76,12 +78,12 @@ body #top-level #top-bar img {
 
 body #top-level #container {
   height: 100%;
-  margin-bottom: 5vh;
-  background-color: white;
+  margin-bottom: 7%;
+  background-color: #F6F6F6;
 }
 
 body #top-level #container #fixer {
-  height: 5vh;
+  height: 7%;
   min-height: 41px;
   width: 100%;
 }
@@ -92,6 +94,8 @@ body #top-level #container #top-blue {
   max-height: 100px;
   min-height: 50px;
   margin-bottom: -35px;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 body #top-level #container #info-container {
@@ -113,10 +117,9 @@ body #top-level #container #info-container {
 
 body #top-level #container #info-container #job-info {
   width: 80%;
+  height: 100%;
   border: 1px solid #e3e3e3;
   border-radius: 1%;
-  background-color: white;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,6 +130,7 @@ body #top-level #container #info-container #job-info {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  background-color: white;
 }
 
 body #top-level #container #info-container #job-info #description {
@@ -143,19 +147,18 @@ body #top-level #container #info-container #job-info #description {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 10px 10px 10px 10px;
-  border-bottom: 2px #24CACF dashed;
 }
 
 body #top-level #container #info-container #job-info #description #image {
-  border-radius: 5% 5% 5% 5%;
-  border: 1px #d3d3d3 solid;
-  margin: 10px 10px 10px 10px;
+  border: 1px solid #f3f3f3;
+  border-radius: 5%;
+  margin: 1em;
 }
 
 body #top-level #container #info-container #job-info #description #image img {
   height: 10em;
   width: 10em;
+  border-radius: 5%;
 }
 
 body #top-level #container #info-container #job-info #description #details {
@@ -172,29 +175,31 @@ body #top-level #container #info-container #job-info #description #details {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin: 10px 10px 10px 10px;
+  margin: 1em;
   height: 100%;
 }
 
 body #top-level #container #info-container #job-info #description #details #title {
-  margin-top: 0px;
-  margin-bottom: 10px;
+  margin-top: 0em;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
 }
 
 body #top-level #container #info-container #job-info #description #details .property {
-  margin-top: 0px;
-  margin-bottom: 5px;
+  margin: 0em;
+  font-size: 0.8em;
 }
 
 body #top-level #container #info-container #job-info #description #details #explanation {
-  margin-bottom: 5px;
+  margin-bottom: 0.2em;
 }
 
 body #top-level #container #info-container #job-info #description #details p {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  font-size: 300;
+  color: #5A5A5A;
   text-align: justify;
-  font-weight: 400;
 }
 
 body #top-level #container #info-container #job-info #skills {
@@ -213,31 +218,31 @@ body #top-level #container #info-container #job-info #skills {
   border-bottom: 1px #d3d3d3 solid;
 }
 
-body #top-level #container #info-container #job-info #skills-title {
-  margin-bottom: -10px;
-  margin-right: 5%;
-  margin-left: 5%;
+body #top-level #container #info-container #job-info #skills #skills-title {
+  margin-bottom: -0.5em;
+  margin-right: 1em;
+  margin-left: 1em;
 }
 
-body #top-level #container #info-container #job-info #skill-items-container {
+body #top-level #container #info-container #job-info #skills #skill-items-container {
   direction: ltr;
-  margin-right: 5%;
-  margin-left: 5%;
+  margin-right: 1em;
+  margin-left: 1em;
   margin-bottom: 3%;
 }
 
-body #top-level #container #info-container #job-info #skill-items-container .skill {
-  border-radius: 2% 2% 2% 2%;
-  padding: 2px 2px 2px 2px;
-  margin-right: 15px;
+body #top-level #container #info-container #job-info #skills #skill-items-container .skill {
+  border-radius: 2%;
+  padding: 2px;
+  margin-right: 1em;
   margin-top: 5px;
   margin-bottom: 5px;
   -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 
-body #top-level #container #info-container #job-info #skill-items-container .point {
+body #top-level #container #info-container #job-info #skills #skill-items-container .point {
   border-radius: 5% 5% 5% 5%;
   padding: 0em 0.5em 0em 0.5em;
   margin-left: 0.5em;
@@ -256,29 +261,26 @@ body #top-level #container #info-container #job-info #offer {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  margin-right: 5%;
-}
-
-body #top-level #container #info-container #job-info #offer #offer-title img {
-  width: 10px;
-  height: 10px;
+  margin-right: 1em;
 }
 
 body #top-level #container #info-container #job-info #offer #form {
-  margin-top: -15px;
-  margin-bottom: 5px;
+  margin-top: -1em;
+  margin-bottom: 0.5em;
 }
 
 body #top-level #container #info-container #job-info #offer input {
   border-radius: 5% 5% 5% 5%;
   border: 1.5px #6BD3DD solid;
-  height: 5ex;
+  height: 2em;
+  font-size: 1em;
 }
 
 body #top-level #container #info-container #job-info #offer button {
   border-radius: 5% 5% 5% 5%;
   background-color: #1CAEBE;
-  height: 6ex;
+  height: 2.3em;
+  font-size: 1em;
   border: none;
 }
 
@@ -287,7 +289,7 @@ body #top-level #container #copyright-notice {
   margin-top: 10vh;
   background-color: #363636;
   width: 100%;
-  height: 5vh;
+  height: 7%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,5 +302,6 @@ body #top-level #container #copyright-notice {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
 }
 /*# sourceMappingURL=style.css.map */

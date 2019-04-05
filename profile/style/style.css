@@ -93,7 +93,7 @@ body #top-level #container #top-blue {
   height: 20vh;
   max-height: 120px;
   min-height: 90px;
-  margin-bottom: -80px;
+  margin-bottom: -5em;
   -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -158,19 +158,14 @@ body #top-level #container #info-container #user-info #description #image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
-  width: 100%;
   margin: 0;
-  max-width: 150px;
 }
 
 body #top-level #container #info-container #user-info #description #image img {
   border-radius: 10%;
   margin: 1px 1px 1px 1px;
-  height: 100%;
-  width: 100%;
-  min-width: 60px;
-  min-height: 60px;
+  height: 10em;
+  width: 10em;
 }
 
 body #top-level #container #info-container #user-info #description #details {
@@ -274,6 +269,7 @@ body #top-level #container #info-container #user-info #skill-items-container .po
 
 body #top-level #copyright-notice {
   bottom: 0;
+  margin-top: 10vh;
   background-color: #363636;
   width: 100%;
   height: 7%;
@@ -290,7 +286,5 @@ body #top-level #copyright-notice {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 /*# sourceMappingURL=style.css.map */

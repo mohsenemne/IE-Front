@@ -1,0 +1,201 @@
+$nav-height: 7%;
+$nav-min-height: 41px;
+$copyright-height: 7%;
+
+body{
+  font-family: IRANSans; direction: rtl;
+	margin-left: 0px;
+  margin-right: 0px;
+  font{
+    font-weight: 300;
+  }
+  a{
+    text-decoration: none;
+  }
+	#top-level{
+    position: absolute;
+		top: 0; right: 0; bottom: 0; left: 0;
+		#top-bar{
+			background-color: white;
+			height: $nav-height;
+			min-height: $nav-min-height;
+			width: 100%;
+			position: fixed;
+			top: 0;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+      align-items: center;
+      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+      div{
+        margin-top: 1vh;
+        margin-right: 10vw;
+      }
+			#links{
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: space-around;
+        align-items: center;
+        margin: 5vh;
+        margin-left: 10vw;
+				p{
+					margin: 1em;
+				}
+			}
+			img{ 
+				width: 7.5em;
+        height: 2.5em;
+			}
+		}
+		#container{
+      height: 100%;
+			margin-bottom: $copyright-height;
+			background-color: #F6F6F6;
+			#fixer{
+				height: $nav-height;
+				min-height: $nav-min-height;
+				width: 100%;
+			}
+			#top-blue{
+				background-color: #B9EEF2;
+				height: 20vh;
+        max-height: 100px;
+        min-height: 50px;
+        margin-bottom: -35px;
+        box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+			}
+			#info-container{
+				width: 100%;
+				min-height: 50vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				#job-info{
+					width: 80%;
+          height: 100%;
+          border: 1px solid#e3e3e3;
+          border-radius: 1%;
+          display: flex;
+					flex-direction: column;
+          justify-content: flex-start;
+          background-color: white;
+          #description{
+						display: flex;
+						flex-direction: row-reverse;
+						justify-content: flex-start;
+						align-items: flex-start;
+            #image{
+              border: 1px solid #f3f3f3;
+              border-radius: 5%;
+              margin: 1em;
+              img{
+                height: 10em;
+                width: 10em;
+                border-radius: 5%;
+							}
+						}
+						#details{
+							display: flex;
+              flex-direction: column;
+							justify-content: flex-start;
+							align-items: flex-start;
+							margin: 1em;
+              height: 100%;
+              #title {
+                margin-top: 0em;
+                margin-bottom: 0.5em;
+                font-size: 1.5em;
+              }
+              .property {
+                margin: 0em;
+                font-size: 0.8em;
+              }
+              #explanation {
+                margin-bottom: 0.2em;
+              }
+              p{
+                margin-top: 0em;
+                margin-bottom: 0em;
+                font-size: 300;
+                color: #5A5A5A;
+                text-align: justify;
+              }
+						}
+          }
+          #skills {
+            background-color: whitesmoke;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border-bottom: 1px #d3d3d3 solid;
+            #skills-title {
+              margin-bottom: -0.5em;
+              margin-right: 1em;
+              margin-left: 1em;
+            }
+            #skill-items-container {
+              direction: ltr;
+              margin-right: 1em;
+              margin-left: 1em;
+              margin-bottom: 3%;
+              .skill {
+                border-radius: 2%;
+                padding: 2px;
+                margin-right: 1em;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+                        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+                background-color: white;
+              }
+              .point {
+                border-radius: 5% 5% 5% 5%;
+                padding: 0em 0.5em 0em 0.5em;
+                margin-left: 0.5em;
+                background-color: #BCEFF3;
+              }
+            }
+          }
+          #offer {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-right: 1em;
+            #form {
+              margin-top: -1em;
+              margin-bottom: 0.5em;
+            }
+            input {
+              border-radius: 5% 5% 5% 5%;
+              border: 1.5px #6BD3DD solid;
+              height: 2em;
+              font-size: 1em;
+            }
+            button {
+              border-radius: 5% 5% 5% 5%;
+              background-color: #1CAEBE;
+              height: 2.3em;
+              font-size: 1em;
+              border: none;
+            }
+          }
+        }
+      }
+      #copyright-notice {
+        bottom: 0;
+        margin-top: 10vh;
+        background-color: #363636;
+        width: 100%;
+        height: $copyright-height;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+      }
+    }
+	}
+}

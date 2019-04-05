@@ -61,7 +61,7 @@ body{
 				height: 20vh;
         max-height: 120px;
         min-height: 90px;
-        margin-bottom: -80px;
+        margin-bottom: -5em;
         box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
 			}
 			#info-container{
@@ -89,17 +89,12 @@ body{
               padding: 0.5em 0.5em 0.5em 0.5em;
               border-radius: 10%;
               display: flex;
-              height: 100%;
-              width: 100%;
               margin: 0;
-              max-width: 150px;
-							img{
+              img{
                 border-radius: 10%;
                 margin: 1px 1px 1px 1px;
-								height: 100%;
-                width: 100%;
-                min-width: 60px;
-                min-height: 60px;
+								height: 10em;
+                width: 10em;
 							}
 						}
 						#details{
@@ -176,6 +171,7 @@ body{
     }
     #copyright-notice{
       bottom: 0;
+      margin-top: 10vh;
       background-color: #363636;
       width: 100%;
       height: $copyright-height;
@@ -184,7 +180,6 @@ body{
       justify-content: space-around;
       align-items: center;
       position: absolute;
-      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
     }
 	}
 }
