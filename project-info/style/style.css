@@ -1,0 +1,304 @@
+body {
+  font-family: IRANSans;
+  direction: rtl;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+body font {
+  font-weight: 91;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body #top-level {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+body #top-level #top-bar {
+  background-color: white;
+  height: 5vh;
+  min-height: 41px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #top-level #top-bar div {
+  margin-top: 1vh;
+  margin-right: 10vw;
+}
+
+body #top-level #top-bar #links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5vh;
+  margin-left: 10vw;
+}
+
+body #top-level #top-bar #links p {
+  margin: 5px 5px 5px 5px;
+}
+
+body #top-level #top-bar img {
+  width: 7.5em;
+  height: 2.5em;
+}
+
+body #top-level #container {
+  height: 100%;
+  margin-bottom: 5vh;
+  background-color: white;
+}
+
+body #top-level #container #fixer {
+  height: 5vh;
+  min-height: 41px;
+  width: 100%;
+}
+
+body #top-level #container #top-blue {
+  background-color: #B9EEF2;
+  height: 20vh;
+  max-height: 100px;
+  min-height: 50px;
+  margin-bottom: -35px;
+}
+
+body #top-level #container #info-container {
+  width: 100%;
+  min-height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #top-level #container #info-container #job-info {
+  width: 80%;
+  border: 1px solid #e3e3e3;
+  border-radius: 1%;
+  background-color: white;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+body #top-level #container #info-container #job-info #description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 2px #24CACF dashed;
+}
+
+body #top-level #container #info-container #job-info #description #image {
+  border-radius: 5% 5% 5% 5%;
+  border: 1px #d3d3d3 solid;
+  margin: 10px 10px 10px 10px;
+}
+
+body #top-level #container #info-container #job-info #description #image img {
+  height: 10em;
+  width: 10em;
+}
+
+body #top-level #container #info-container #job-info #description #details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 10px 10px 10px 10px;
+  height: 100%;
+}
+
+body #top-level #container #info-container #job-info #description #details #title {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+body #top-level #container #info-container #job-info #description #details .property {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+body #top-level #container #info-container #job-info #description #details #explanation {
+  margin-bottom: 5px;
+}
+
+body #top-level #container #info-container #job-info #description #details p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: justify;
+  font-weight: 400;
+}
+
+body #top-level #container #info-container #job-info #skills {
+  background-color: whitesmoke;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-bottom: 1px #d3d3d3 solid;
+}
+
+body #top-level #container #info-container #job-info #skills-title {
+  margin-bottom: -10px;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+body #top-level #container #info-container #job-info #skill-items-container {
+  direction: ltr;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 3%;
+}
+
+body #top-level #container #info-container #job-info #skill-items-container .skill {
+  border-radius: 2% 2% 2% 2%;
+  padding: 2px 2px 2px 2px;
+  margin-right: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+body #top-level #container #info-container #job-info #skill-items-container .point {
+  border-radius: 5% 5% 5% 5%;
+  padding: 0em 0.5em 0em 0.5em;
+  margin-left: 0.5em;
+  background-color: #BCEFF3;
+}
+
+body #top-level #container #info-container #job-info #offer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-right: 5%;
+}
+
+body #top-level #container #info-container #job-info #offer #offer-title img {
+  width: 10px;
+  height: 10px;
+}
+
+body #top-level #container #info-container #job-info #offer #form {
+  margin-top: -15px;
+  margin-bottom: 5px;
+}
+
+body #top-level #container #info-container #job-info #offer input {
+  border-radius: 5% 5% 5% 5%;
+  border: 1.5px #6BD3DD solid;
+  height: 5ex;
+}
+
+body #top-level #container #info-container #job-info #offer button {
+  border-radius: 5% 5% 5% 5%;
+  background-color: #1CAEBE;
+  height: 6ex;
+  border: none;
+}
+
+body #top-level #container #copyright-notice {
+  bottom: 0;
+  margin-top: 10vh;
+  background-color: #363636;
+  width: 100%;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=style.css.map */
