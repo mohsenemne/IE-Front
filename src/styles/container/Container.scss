@@ -1,0 +1,9 @@
+@import "../Variables.scss";
+
+#container{
+    #fixer{
+        height: $nav-height;
+        min-height: $nav-min-height;
+        width: 100%;
+    }
+}

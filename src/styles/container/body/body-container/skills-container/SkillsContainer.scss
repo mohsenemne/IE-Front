@@ -1,0 +1,13 @@
+#skills-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .skill{
+        background-color: #F9F9F9;
+        margin: 0em 0.1em 0em 0.1em;
+        border: 1px #EFEFEF solid;
+        border-radius: 2%;
+        font-size: 0.8vw;
+        color: #7A7A7A;
+    }
+}
