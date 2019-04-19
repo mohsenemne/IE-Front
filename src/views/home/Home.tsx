@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import 'src/styles/Home.scss';
+import 'src/fonts/iransans-fonts/fonts.css'
+import 'src/styles/Root.scss';
+
 import Navigator from 'src/components/navigator/Navigator';
 import Container from 'src/components/container/Container';
-import { stat } from 'fs';
 
 interface Props {}
 interface State {
@@ -38,7 +39,6 @@ class Home extends Component<Props, State> {
 
   render() {
     const projectsJSX = this.state.projects.map((p:any) => {
-      
       return <div key={JSON.parse(JSON.stringify(p)).id} id={JSON.parse(JSON.stringify(p)).id}> {JSON.parse(JSON.stringify(p)).id} </div>
     });
 

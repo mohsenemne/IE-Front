@@ -27,12 +27,9 @@ export default class TopBlue extends Component<Props, State> {
             )
         }
         else{
-            <div className="top-blue"></div>
+            return(
+                <div className={this.props.view+"-top-blue"}></div>
+            )
         }
-        return (
-        <div>
-            
-        </div>
-        )
     }
 }

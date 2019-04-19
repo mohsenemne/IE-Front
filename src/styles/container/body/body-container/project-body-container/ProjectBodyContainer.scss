@@ -1,0 +1,135 @@
+#project-body-container{
+    width: 80%;
+    background-color: white;
+    height: 100%;
+    border: 1px solid#e3e3e3;
+    border-radius: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    #job-info{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        #image{
+        border: 1px solid #f3f3f3;
+        border-radius: 5%;
+        margin: 1em;
+            img{
+            height: 10em;
+            width: 10em;
+            border-radius: 5%;
+            }
+        }
+        #job-info-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 1em;
+            height: 100%;
+            #title {
+                margin-top: 0em;
+                margin-bottom: 0.5em;
+                font-size: 1.5em;
+            }
+            #deadline{
+                color: #7D7D7D;
+            }
+            #deadline-reached{
+                color: red;
+            }
+            #budget{
+                color: #32928F;
+            }
+            #winner{
+                color: green;
+            }
+            h3 {
+                margin-bottom: 0.2em;
+            }
+            #description{
+                margin-top: 0em;
+                margin-bottom: 0em;
+                font-size: 300;
+                color: #5A5A5A;
+                text-align: justify;
+            }
+            p {
+                width: 100%;
+                margin: 0em;
+                font-size: 0.9em;
+            }
+            #explanation {
+            margin-bottom: 0.2em;
+            }
+            #description{
+                margin-top: 0em;
+                margin-bottom: 0em;
+                font-size: 300;
+                color: #5A5A5A;
+                text-align: justify;
+            }
+        }
+    }
+    #skills {
+        background-color: whitesmoke;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: 1px #d3d3d3 solid;
+        #skills-title {
+            margin-bottom: 0.5em;
+            margin-right: 1em;
+            margin-left: 1em;
+            color: #69A7A1;
+        }
+        #skill-items-container {
+            direction: ltr;
+            margin-right: 1em;
+            margin-left: 1em;
+            margin-bottom: 3%;
+        }
+    }
+    #offer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-right: 1em;
+        #offer-title-already-bid{
+            color: green;
+        }
+        #form {
+            margin-top: -1em;
+            margin-bottom: 0.5em;
+            display: flex;
+            span{
+                border-radius: 5% 5% 5% 5%;
+                border: 1.5px #6BD3DD solid;
+                height: 2.3em;
+                font-size: 1em;
+                padding-left: 0.5em;
+                color: #619CA1;
+                input {
+                    border: none;
+                    height: 2em;
+                    font-size: 0.96em;
+                    background-color: rgba($color: #000000, $alpha: 0);
+                }
+                input:focus {
+                    outline: none;
+                }
+            }
+            button {
+                border-radius: 5% 5% 5% 5%;
+                border: 1.5px #1CAEBE solid;
+                background-color: #1CAEBE;
+                height: 2.5em;
+                font-size: 1em;
+            }
+        }
+    }
+}

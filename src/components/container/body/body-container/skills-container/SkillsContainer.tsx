@@ -1,25 +1,53 @@
 import React, { Component } from 'react'
 import 'src/styles/container/body/body-container/skills-container/SkillsContainer.scss'
+import axios from 'axios'
 
 interface Skill{
     name: string
     points: number
+    endorsed?: boolean
 }
 
 interface Props{
     showPoints: boolean
-    skills: []
+    skills: Skill[]
+    username?: string
+    handleClickPoint?(): void 
 }
 
 interface State{
-
+    endorsedSkills: string[]
 }
 
 export default class SkillsContainer extends Component<Props, State> {
     constructor(props : Props){
         super(props);
-        console.log(props)
     }
+
+    componentWillMount(){
+        const {username} = this.props
+        const {skills} = this.props
+        if(username && username != '1'){
+            fetch(new Request('http://localhost:8080/users/'+username+'/skills/endorsements', {method: 'GET'}))
+                .then(response => {
+                    if (response.ok) {
+                    return response.json();
+                    }
+                    return console.error();
+                }).then((response:string[]) => {
+                    this.setState({endorsedSkills : response})
+                    for(var i=0; i<skills.length; i++){
+                        if(response.includes(skills[i].name)){
+                            skills[i].endorsed = true
+                        }                        
+                        else{
+                            skills[i].endorsed = false
+                        }
+                    }
+                });            
+        }
+    }
+
     render() {
         let {showPoints} = this.props;
         let {skills} = this.props;
@@ -27,7 +55,7 @@ export default class SkillsContainer extends Component<Props, State> {
             if(showPoints)
                 return <div key={skill.name} id={skill.name} className='skill-with-point'>
                             <span className='name'>{skill.name}</span>
-                            <span className='point'>{skill.points}</span>
+                            <button className={skill.endorsed?'endorsed-point':'point'} onClick={() => this.handleClick(skill.name)}>{skill.points}</button>
                        </div>
             else
                 return <div key={skill.name} id={skill.name} className='skill'>{skill.name}</div>
@@ -39,5 +67,45 @@ export default class SkillsContainer extends Component<Props, State> {
             {skillsJSX}
         </div>
         )
+    }
+
+    handleClick(skill: string): void{
+        const {username} = this.props
+        const {skills} = this.props
+        if(username == '1'){
+            axios.delete('http://localhost:8080/users/'+username+'/skills?skill='+skill)
+                .then(function (response:any) {
+                    if(response){
+                        for( var i = 0; i < skills.length; i++){ 
+                            if (skills[i].name === skill) {
+                                skills.splice(i, 1);
+                                console.log("here")
+                                break;
+                            }
+                        }
+                    }
+                })
+                .catch(function (error:any) {
+                    console.log(error);
+                });
+        }
+        else{
+            axios.post('http://localhost:8080/users/'+username+'/skills/endorsements?skill='+skill)
+                .then(function (response:any) {
+                    if(response.ok){
+                        for( var i = 0; i < skills.length; i++){ 
+                            if (skills[i].name === skill) {
+                                skills[i].points += 1;
+                                break
+                            }
+                        }
+                    }
+                    console.log(response);
+                })
+                .catch(function (error:any) {
+                    console.log(error);
+                });
+        }
+        this.forceUpdate()
     }
 }

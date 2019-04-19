@@ -10,4 +10,30 @@
         font-size: 0.8vw;
         color: #7A7A7A;
     }
+
+    .skill-with-point{
+        border-radius: 2%;
+        padding: 0.2em;
+        margin-right: 1em;
+        margin-bottom: 5px;
+        align-items: center;
+        -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+                box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        vertical-align: 0px;
+
+        .point {
+            border-radius: 5%;
+            padding: 0em 0.5em 0em 0.5em;
+            margin-left: 0.5em;
+            background-color: #BCEFF3;
+            height: 1.5em;
+            font-size: 1em;
+            color: #539B98;
+            border: none;
+        }
+        .point:hover{
+        
+        }
+    }
 }

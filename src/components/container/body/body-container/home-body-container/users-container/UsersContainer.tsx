@@ -17,7 +17,6 @@ export default class UsersContainer extends Component<Props, State> {
     render() {
         const {users} = this.props;
         const usersJSX = users.map((u:object) => {
-            console.log(u);
             let user = JSON.parse(JSON.stringify(u));
             return <User key={user.username} user={{name: user.name, jobTitle: user.jobTitle}}/>
           });

@@ -1,25 +1,51 @@
 import React, { Component } from 'react'
 import 'src/styles/container/body/Body.scss'
 import HomeBodyContainer from './body-container/home-body-container/HomeBodyContainer'
+import ProjectBodyContainer from './body-container/project-body-container/ProjectBodyContainer'
+import ProfileBodyContainer from './body-container/profile-body-container/ProfileBodyContainer'
+
+interface UserInfo {
+    username : string
+    firstName : string
+    lastName : string
+    jobTitle : string
+    skills : []
+    bio : string  
+}
+
+interface ProjectInfo{
+    budget: number
+    deadline: number
+    description: string
+    id: string
+    imageURL: string
+    skills: []
+    title: string
+    winner: {name: string}
+}
 
 interface Props{
     view: string;
     projects?: [];
     users?: [];
-
+    project?: ProjectInfo;
+    user?: UserInfo;
 }
 interface State{
 
 }
+
 export default class Body extends Component<Props, State> {
     constructor(props : Props){
         super(props);
     }
     render() {
-        let bodyContainer:JSX.Element = <div>salm</div>;
+        let bodyContainer:JSX.Element = <div></div>;
         const {view} = this.props;
         const {projects} = this.props;
         const {users} = this.props;
+        const {project} = this.props;
+        const {user} = this.props;
 
         switch(view) {
             case 'home':
@@ -30,10 +56,12 @@ export default class Body extends Component<Props, State> {
                 // code block
                 break;
             case 'profile':
-                // code block
+                if(user)
+                    bodyContainer = <ProfileBodyContainer user={user}/>;
                 break;
             case 'project':
-                // code block
+                if(project)
+                    bodyContainer = <ProjectBodyContainer project={project}/>;
                 break;
             case 'register':
                 // code block

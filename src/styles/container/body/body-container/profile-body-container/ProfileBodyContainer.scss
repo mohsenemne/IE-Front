@@ -1,0 +1,144 @@
+#profile-body-container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    #user-info{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+        #user-info-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            align-items: flex-start;
+            margin-right: 1em;
+            height: 100%;
+            margin-top: 100px; 
+            #name{
+                font-size: 1.5em;
+                margin: 0;
+                color: #474747;
+            }
+            #job-title{
+                margin: 0;
+                color: #636363;
+            }
+        }
+        #image{
+            background-color: white;
+            box-shadow: 1px 1px 1px 1px rgba($color: #000000, $alpha: 0.1);
+            padding: 0.5em 0.5em 0.5em 0.5em;
+            border-radius: 10%;
+            display: flex;
+            margin: 0;
+            img{
+                border-radius: 10%;
+                margin: 1px 1px 1px 1px;
+                height: 10em;
+                width: 10em;
+            }
+        }
+    }
+    #bio{
+        color: #636363;
+        width: 100%;
+    }
+    #select-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        #form {
+            display: flex;
+            align-items: center;
+            padding: 2px 2px 2px 2px;
+            margin-right: 1em;
+            background-color: white;
+            box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+            border-radius: 5%;
+            select{
+                background-color: #F9F9F9;
+                border: none;
+                height: 3em;
+                width: 15em;
+            }
+            button{
+                display: flex;
+                align-items: center;
+                background-color: #0698A7;
+                height: 3em;
+                border: none;
+                border-radius: 5%;
+                p{
+                    width: 100%;
+                    color: white;
+                    margin: 0;
+                }
+            }            
+        }
+    }
+    #skills {
+        background-color: whitesmoke;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: 1px #d3d3d3 solid;
+        #skills-title {
+            margin-bottom: 0.5em;
+            margin-right: 1em;
+            margin-left: 1em;
+            color: #69A7A1;
+        }
+        #skill-items-container {
+            direction: ltr;
+            margin-right: 1em;
+            margin-left: 1em;
+            margin-bottom: 3%;
+        }
+    }
+    #offer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-right: 1em;
+        #offer-title-already-bid{
+            color: green;
+        }
+        #form {
+            margin-top: -1em;
+            margin-bottom: 0.5em;
+            display: flex;
+            span{
+                border-radius: 5% 5% 5% 5%;
+                border: 1.5px #6BD3DD solid;
+                height: 2.3em;
+                font-size: 1em;
+                padding-left: 0.5em;
+                color: #619CA1;
+                input {
+                    border: none;
+                    height: 2em;
+                    font-size: 0.96em;
+                    background-color: rgba($color: #000000, $alpha: 0);
+                }
+                input:focus {
+                    outline: none;
+                }
+            }
+            button {
+                border-radius: 5% 5% 5% 5%;
+                border: 1.5px #1CAEBE solid;
+                background-color: #1CAEBE;
+                height: 2.5em;
+                font-size: 1em;
+            }
+        }
+    }
+}
