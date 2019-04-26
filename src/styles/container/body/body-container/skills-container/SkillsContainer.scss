@@ -31,9 +31,56 @@
             font-size: 1em;
             color: #539B98;
             border: none;
+            p{
+                margin: 0;
+            }
+        }
+        .endorsed-point {
+            border-radius: 5%;
+            padding: 0em 0.5em 0em 0.5em;
+            margin-left: 0.5em;
+            background-color: #24AF25;
+            height: 1.5em;
+            font-size: 1em;
+            color: #F8FCED;
+            border: none;
+            p{
+                margin: 0;
+            }
+        }
+        .own-skill-point {
+            border-radius: 5%;
+            padding: 0em 0.5em 0em 0.5em;
+            margin-left: 0.5em;
+            background-color: #BCEFF3;
+            height: 1.5em;
+            font-size: 1em;
+            color: #539B98;
+            border: none;
+            p{
+                margin: 0;
+            }
+        }
+        .point:hover p{
+            display: none;   
         }
         .point:hover{
-        
+            background-color: #24AF25;
+            color: #F8FCED;  
+        }
+        .point:hover:before {
+            content:"+";
+        }
+
+        .own-skill-point:hover p{
+            display: none;   
+        }
+        .own-skill-point:hover{
+            background-color: red;
+            color: #F8FCED;  
+        }
+        .own-skill-point:hover:before {
+            content:"-";
         }
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'src/styles/container/Container.scss'
 import Body from 'src/components/container/body/Body'
 import TopBlue from 'src/components/container/top-blue/TopBlue'
+import Footer from 'src/components/container/footer/Footer'
 
 interface UserInfo {
     username : string
@@ -76,6 +77,7 @@ export default class Container extends Component<Props, State> {
             <div id='fixer'></div>
             <TopBlue view={view}/>
             {body}
+            <Footer/>
         </div>
         )
     }

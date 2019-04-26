@@ -4,6 +4,7 @@ import 'src/styles/container/body/body-container/home-body-container/users-conta
 interface UserInfo{
     jobTitle: string
     name: string
+    id: string
 }
 
 interface Props{
@@ -21,15 +22,17 @@ export default class User extends Component<Props, State> {
     render() {
         const {user} = this.props;
         return (
-        <div className="user">	
-            <div className="image">
-                <img src="../assets/pics/project.png"/>
+        <a href={'http://127.0.0.1:3000/users/'+user.id} >
+            <div className="user">
+                <div className="image">
+                    <img src="../assets/pics/project.png"/>
+                </div>
+                <div className="details">
+                    <p className="name"> {user.name} </p>
+                    <p className="status"> {user.jobTitle} </p>
+                </div>
             </div>
-            <div className="details">
-                <p className="name"> {user.name} </p>
-                <p className="status"> {user.jobTitle} </p>
-            </div>
-        </div>
+        </a>
         )
     }
 }

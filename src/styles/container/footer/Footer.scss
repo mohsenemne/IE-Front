@@ -1,0 +1,16 @@
+@import "../../Variables.scss";
+
+#copyright-notice {
+    margin-top: 10vh;
+    background-color: #363636;
+    width: 100%;
+    height: $copyright-height;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    p{
+        color: #838383;
+    }
+  }

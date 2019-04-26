@@ -61,3 +61,7 @@ export default class Project extends Component<Props, State> {
         )
     }
 }
+
+// $(document).ready(function(){
+//     $(".image").height($(".image").width())
+// });
