@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import 'src/styles/container/body/body-container/profile-body-container/ProfileBodyContainer.scss'
 import SkillsContainer from 'src/components/container/body/body-container/skills-container/SkillsContainer';
+import axios from 'axios';
+
+import {Skill} from 'src/interface/inteface'
 
 interface UserInfo {
     username : string
     firstName : string
     lastName : string
     jobTitle : string
-    skills : []
+    skills : Skill[]
     bio : string  
 }
 
@@ -18,7 +21,6 @@ interface Props{
 interface State{
     endorsedSkills : [] | null;
     availableSkills : [] | null;
-    newSkill: string;
 }
 
 export default class ProfileBodyContainer extends Component<Props, State> {
@@ -51,6 +53,38 @@ export default class ProfileBodyContainer extends Component<Props, State> {
         }
     }
     
+    addSkill(e: React.FormEvent<HTMLFormElement>){
+        const {user} = this.props
+        const {availableSkills} = this.state
+        var sel = document.getElementById('new-skill-select')! as HTMLSelectElement
+        let newSkill = sel.value
+        
+        if(newSkill == ""){
+            alert("یک مهارت انتخاب کنید!")
+            e.preventDefault()
+            return
+        }
+        var forceUpdate = this.forceUpdate.bind(this)
+        axios.put('http://localhost:8080/users/'+this.props.user.username+'/skills?skill='+newSkill)
+            .then(function (response:any) {
+                console.log(response)
+                if(response.request.response){
+                    user.skills.push({name: newSkill, points: 0})
+                    let i;
+                    for(i=0; i<availableSkills!.length; i++){
+                        if(availableSkills![i] == newSkill)
+                            availableSkills!.splice(i, 1)
+                    }
+                    sel.selectedIndex = 0
+                    forceUpdate()
+                }
+            })
+            .catch(function (error:any) {
+                console.log(error);
+            });
+        e.preventDefault()
+    }
+
     render() {
         const {user} = this.props;
         // const {availableSkills} = this.state
@@ -64,12 +98,12 @@ export default class ProfileBodyContainer extends Component<Props, State> {
             })
             selectContainer =   <div id="select-container">
                                     <div id="select-title"><h4>مهارت‌ها:</h4></div>
-                                    <div id="form">
-                                        <select onChange={e => this.handleSelectChange(e)}>
+                                    <form id="form" onSubmit={e => this.addSkill(e)}>
+                                        <select id='new-skill-select'>
                                                 <option value="" disabled selected>--انتخاب مهارت--</option>
                                                 {skills}
-                                        </select><button> <p> افزودن مهارت </p> </button>
-                                    </div>  
+                                        </select><button type="submit"> <p> افزودن مهارت </p> </button>
+                                    </form>  
                                 </div>
         }
         
@@ -88,15 +122,11 @@ export default class ProfileBodyContainer extends Component<Props, State> {
                 {selectContainer}
                 <div id="skills">
                     <div id="skill-items-container">
-                        <SkillsContainer showPoints={true} skills={user.skills} username={user.username}/>
+                        <SkillsContainer view='profile' skills={user.skills} username={user.username}/>
                     </div>
                 </div>
             </div>
         )
-    }
-
-    handleSelectChange(e : React.ChangeEvent<HTMLSelectElement>): void{
-        this.setState({newSkill: e.target.value, endorsedSkills: this.state.endorsedSkills, availableSkills: this.state.availableSkills})
     }
     
 }

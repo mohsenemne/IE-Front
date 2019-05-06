@@ -4,16 +4,10 @@ import 'src/fonts/iransans-fonts/fonts.css'
 
 import Navigator from 'src/components/navigator/Navigator';
 import Container from 'src/components/container/Container';
+import { ProjectInfo } from 'src/interface/inteface';
 
 interface State {
-  budget: number
-  deadline: number
-  description: string
-  id: string
-  imageURL: string
-  skills: []
-  title: string
-  winner: {name: string}
+  project: ProjectInfo
 }
 
 export default class Project extends Component<any, State>{
@@ -30,15 +24,21 @@ export default class Project extends Component<any, State>{
           return response.json();
         }
           return console.error();
-      }).then((response:object) => {
-        this.setState(response);
+      }).then((response:ProjectInfo) => {
+        this.setState({project: response});
     });
   }
   render() {
+    if(this.state)
+      document.title = this.state.project.title
+    else
+      return (<div></div>)
+    const {project} = this.state
+    
     return (
       <div id='root'>
         <Navigator/>
-        <Container view='project' project={this.state} />
+        <Container view='project' project={project} />
       </div>
     )
   }

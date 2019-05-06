@@ -4,6 +4,8 @@ import HomeBodyContainer from './body-container/home-body-container/HomeBodyCont
 import ProjectBodyContainer from './body-container/project-body-container/ProjectBodyContainer'
 import ProfileBodyContainer from './body-container/profile-body-container/ProfileBodyContainer'
 
+import {ProjectInfo} from 'src/interface/inteface'
+
 interface UserInfo {
     username : string
     firstName : string
@@ -13,20 +15,9 @@ interface UserInfo {
     bio : string  
 }
 
-interface ProjectInfo{
-    budget: number
-    deadline: number
-    description: string
-    id: string
-    imageURL: string
-    skills: []
-    title: string
-    winner: {name: string}
-}
-
 interface Props{
     view: string;
-    projects?: [];
+    projects?: ProjectInfo[];
     users?: [];
     project?: ProjectInfo;
     user?: UserInfo;

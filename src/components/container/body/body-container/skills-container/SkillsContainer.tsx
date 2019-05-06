@@ -2,17 +2,12 @@ import React, { Component } from 'react'
 import 'src/styles/container/body/body-container/skills-container/SkillsContainer.scss'
 import axios from 'axios'
 
-interface Skill{
-    name: string
-    points: number
-    endorsed?: boolean
-}
+import {Skill} from 'src/interface/inteface'
 
 interface Props{
-    showPoints: boolean
+    view: string
     skills: Skill[]
     username?: string
-    handleClickPoint?(): void 
 }
 
 interface State{
@@ -48,21 +43,24 @@ export default class SkillsContainer extends Component<Props, State> {
                 });    
         }
     }
-
+    // {view == 'project'?'project-skill':'user-skill' + ' skill'}
     render() {
-        let {showPoints} = this.props;
+        let {view} = this.props;
         let {skills} = this.props;
         let {username} = this.props;
+        console.log(view)
         let skillsJSX = skills.map((skill:Skill) => {
-            if(showPoints)
-                return <div key={skill.name} id={skill.name} className='skill-with-point'>
+            if(view != 'home')
+                return <button key={skill.name} id={skill.name} disabled={view == 'project' || skill.endorsed} 
+                        className={'skill-with-point ' + ((view == 'project')?'project-skill':'user-skill')}
+                        onClick={() => this.handleClick(skill.name)}>
                             <span className='name'>{skill.name}</span>
-                            <button className={(username=="1")?'own-skill-point':skill.endorsed?'endorsed-point':'point'} onClick={() => this.handleClick(skill.name)}>
+                            <span className={'point ' + ((view == 'profile')?(username=="1")?'own-skill-point':skill.endorsed?'endorsed-point':'':'')} >
                                 <p>
                                     {skill.points}
                                 </p>
-                            </button>
-                       </div>
+                            </span>
+                       </button>
             else
                 return <div key={skill.name} id={skill.name} className='skill'>{skill.name}</div>
         });

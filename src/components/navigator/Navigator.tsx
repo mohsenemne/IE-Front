@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import 'src/styles/navigator/Navigator.scss'
+import { Link } from 'react-router-dom';
 
 export default class Navigator extends Component {
   render() {
     return (
     <nav id="top-bar">
-        <div> <img src="../assets/logo/logo v1.png" /> </div>
+        <Link to="/" id="logo"> <img src={require('src/images/logo/logo v1.png')}/> </Link>
         <div id="links">
-            <a href="http://localhost:3000/users/1" id="profile"><p> حساب کاربری </p></a>
+            <Link to="/users/1" id="profile"><p> حساب کاربری </p></Link>
             <a id="exit"><p> خروج </p></a>
         </div>
     </nav>

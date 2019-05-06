@@ -3,13 +3,15 @@ import 'src/styles/container/body/body-container/home-body-container/HomeBodyCon
 import ProjectsContainer from './projects-container/ProjectsContainer'
 import UsersContainer from './users-container/UsersContainer'
 
+import {ProjectInfo} from 'src/interface/inteface'
+
 interface Props{
-    projects: [];
+    projects: ProjectInfo[];
     users: [];
 
 }
 interface State{
-
+    
 }
 
 

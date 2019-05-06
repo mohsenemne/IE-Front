@@ -23,7 +23,7 @@
             font-size: 0.6em;
             margin: 1em 3em 2em 0em;
         }
-        #search{
+        #project-search-form{
             width: 60%;
             background-color: #D9F8FA;
             align-self: center;
@@ -56,6 +56,7 @@
                 color: white;
                 font-weight: 300;
                 width: 5em;
+                cursor: pointer;
             }
         }
     }

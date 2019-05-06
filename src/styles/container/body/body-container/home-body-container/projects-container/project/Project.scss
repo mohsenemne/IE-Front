@@ -36,34 +36,30 @@ a {
         width: 80%;
         .title-and-deadline {
             display: flex;
-            width: 100%;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
             .title{
-                width: 70%;
+                width: 80%;
                 margin-top: 0em;
-                font-size: 1.5vw;  
+                font-size: 1.5vw;
+                padding-left: 1em; 
             }
             .deadline{
-                width: 30%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background-color: #F5F5F5;
+                width: 20%;
+                padding: 0em 0.5em 0em 0.5em;
                 border-radius: 2%;
                 color: #858585;
                 font-size: 0.8vw;
                 height: 1.8vw;
+                background-color: #F5F5F5;
             }
             .deadline-reached{
-                display: flex;
-                align-items: center;
-                padding: 0em 0.5em 0em 0.5em;
                 background-color: #418787;
-                border-radius: 2%;
                 color: white;
-                font-size: 0.8vw;
-                height: 1.8vw;
             }
         }
         p {

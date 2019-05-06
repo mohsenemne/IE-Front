@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import 'src/styles/container/body/body-container/home-body-container/projects-container/ProjectsContainer.scss'
 import Project from './project/Project'
+import { ProjectInfo } from 'src/interface/inteface';
 
 interface Props{
-    projects:[]
+    projects: ProjectInfo[]
 }
 
 interface State{

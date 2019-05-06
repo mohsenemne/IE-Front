@@ -4,6 +4,9 @@ import Body from 'src/components/container/body/Body'
 import TopBlue from 'src/components/container/top-blue/TopBlue'
 import Footer from 'src/components/container/footer/Footer'
 
+import {ProjectInfo} from 'src/interface/inteface'
+// export ProjectInfo
+
 interface UserInfo {
     username : string
     firstName : string
@@ -11,35 +14,31 @@ interface UserInfo {
     jobTitle : string
     skills : []
     bio : string  
-  }
-
-interface ProjectInfo {
-    budget: number
-    deadline: number
-    description: string
-    id: string
-    imageURL: string
-    skills: []
-    title: string
-    winner: {name: string}
-  }
+}
 
 interface Props{
     view: string;
-    projects?: [];
+    projects?: ProjectInfo[];
     users?: [];
     project?: ProjectInfo;
     user?: UserInfo;
 
 }
 interface State{
-
+    projects?: ProjectInfo[]
 }
 
 export default class Container extends Component<Props, State> {
     constructor(props : Props){
         super(props);
+        this.setState({projects: this.props.projects})
+        console.log(this.state)
     }
+
+    updateProjects(projects: ProjectInfo[]){
+        this.setState({projects: projects})
+    }
+
     render() {
         let body:JSX.Element = <div>salm</div>;
         const {view} = this.props;
@@ -50,8 +49,12 @@ export default class Container extends Component<Props, State> {
         
         switch(view) {
             case 'home':
-                if(projects && users)
-                    body = <Body view={view} projects={projects} users={users}/>;
+                if(projects && users){  
+                    if(this.state)
+                        body = <Body view={view} projects={this.state.projects} users={users}/>;
+                    else
+                        body = body = <Body view={view} projects={projects} users={users}/>;
+                }
                 break;
             case 'login':
                 // code block
@@ -75,7 +78,7 @@ export default class Container extends Component<Props, State> {
         return (
         <div id='container'>
             <div id='fixer'></div>
-            <TopBlue view={view}/>
+            <TopBlue view={view} updateProjects ={this.updateProjects.bind(this)}/>
             {body}
             <Footer/>
         </div>

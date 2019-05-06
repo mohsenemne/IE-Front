@@ -33,10 +33,14 @@ export default class User extends Component<any, State>{
     });
   }
   render() {
+    const {state} = this
+    if(this.state)
+      document.title = state.firstName + ' ' + state.lastName
+
     return (
       <div id='root'>
         <Navigator/>
-        <Container view='profile' user={this.state} />
+        <Container view='profile' user={state} />
       </div>
     )
   }
