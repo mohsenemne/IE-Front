@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import 'src/styles/container/top-blue/TopBlue.scss'
 
 import {ProjectInfo} from 'src/interface/inteface'
+import axios from 'axios';
 
 interface Props{
     view: string;
@@ -19,15 +20,16 @@ export default class TopBlue extends Component<Props, State> {
     searchSubmit(e : React.FormEvent<HTMLFormElement>){
         let searchKey = (document.getElementById("project-search-input")! as HTMLInputElement).value
         
-        fetch(new Request('http://localhost:8080/search/projects?key='+searchKey, {method: 'GET'}))
-            .then(response => {
-                if (response.ok) return response.json();
-                    return console.error();
-            })
-            .then((response:ProjectInfo[]) => {
-                this.props.updateProjects!(response);
-            });
-
+        var jwt = localStorage.getItem('joboonja-jwt')
+        const {props} = this
+        axios.get('http://localhost:8080/search/projects?key='+searchKey, {headers:{Authorization:jwt!}})
+        .then(function (response){
+            props.updateProjects!(response.data)
+        })
+        .catch(function (error){
+            console.log(error)
+        });
+        
         (document.getElementById("project-search-input")! as HTMLInputElement).value = ''
         e.preventDefault()
     }

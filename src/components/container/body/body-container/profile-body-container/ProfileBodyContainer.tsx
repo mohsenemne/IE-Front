@@ -31,25 +31,25 @@ export default class ProfileBodyContainer extends Component<Props, State> {
     
     componentDidMount() {
         const { user } = this.props
+        var jwt = localStorage.getItem('joboonja-jwt')
+        var setState = this.setState.bind(this)
         if(user.username == '1'){
-            fetch(new Request('http://localhost:8080/skills', {method: 'GET'}))
-                .then(response => {
-                    if (response.ok) return response.json();
-                    return console.error();
-                })
-                .then((response:[]) => {
-                    this.setState({availableSkills: response}); 
-                });
+            axios.get('http://localhost:8080/skills', {headers:{Authorization:jwt!}})
+            .then(function (response){
+                setState({availableSkills: response.data});
+            })
+            .catch(function (error){
+                console.log(error)
+            })
         }
         else{
-            fetch(new Request('http://localhost:8080/users/'+user.username+'/endorsments', {method: 'GET'}))
-                .then(response => {
-                    if (response.ok) return response.json();
-                    return console.error();
-                })
-                .then((response:[]) => {
-                    this.setState({endorsedSkills: response}); 
-                });
+            axios.get('http://localhost:8080/users/'+user.username+'/endorsments', {headers:{Authorization:jwt!}})
+            .then(function (response){
+                setState({endorsedSkills: response.data});
+            })
+            .catch(function (error){
+                console.log(error)
+            })
         }
     }
     
@@ -65,7 +65,10 @@ export default class ProfileBodyContainer extends Component<Props, State> {
             return
         }
         var forceUpdate = this.forceUpdate.bind(this)
-        axios.put('http://localhost:8080/users/'+this.props.user.username+'/skills?skill='+newSkill)
+
+        var jwt = localStorage.getItem('joboonja-jwt')
+
+        axios.put('http://localhost:8080/users/'+this.props.user.username+'/skills?skill='+newSkill, null, {headers:{Authorization:jwt!}})
             .then(function (response:any) {
                 console.log(response)
                 if(response.request.response){
@@ -87,9 +90,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
 
     render() {
         const {user} = this.props;
-        // const {availableSkills} = this.state
-        // const {endorsedSkills} = this.state
-
+        
         let selectContainer : JSX.Element | null;
         selectContainer = null
         if(user.username == '1' && this.state){

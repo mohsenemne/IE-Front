@@ -43,27 +43,29 @@ export default class ProjectBodyContainer extends Component<Props, State> {
         let deadline : JSX.Element;
         let remained_time = project.deadline - Date.now()
 
-        fetch(new Request('http://localhost:8080/projects/'+project.id+'/bids', {method: 'GET'}))
-            .then(response => {
-                if (response.ok) return response.json();
-                return console.error();
+        var jwt = localStorage.getItem('joboonja-jwt')
+        var setState = this.setState.bind(this)
+        var countDown = this.countDown.bind(this)
+        axios.get('http://localhost:8080/projects/'+project.id+'/bids', {headers:{Authorization:jwt!}})
+        .then(function (response){
+            var usernames = response.data.map((bid:any) => {
+                return bid.biddingUser.username;
             })
-            .then((response:[]) => {
-                var usernames = response.map((bid:any) => {
-                    return bid.biddingUser.username;
-                })
-                console.log(usernames)
-                let b;
-                if(usernames.includes('1')){
-                    b = false
-                }
-                else{
-                    b = true
-                }
-                var interval = setInterval(this.countDown.bind(this), 1000);
-                this.setState({bid: b, remained_time: remained_time, interval: (interval as unknown as number)});
-                console.log(typeof interval)
-            });
+            console.log(usernames)
+            let b;
+            if(usernames.includes('1')){
+                b = false
+            }
+            else{
+                b = true
+            }
+            var interval = setInterval(countDown, 1000);
+            setState({bid: b, remained_time: remained_time, interval: (interval as unknown as number)});
+            console.log(typeof interval)
+        })
+        .catch(function (error){
+            console.log(error)
+        })
     }
 
     countDown(){
@@ -196,7 +198,10 @@ export default class ProjectBodyContainer extends Component<Props, State> {
             e.preventDefault()
             return
         }
-        axios.put('http://localhost:8080/projects/'+project.id+'/bids?bidAmount='+bidAmount)
+
+        var jwt = localStorage.getItem('joboonja-jwt')
+
+        axios.put('http://localhost:8080/projects/'+project.id+'/bids?bidAmount='+bidAmount, null, {headers:{Authorization:jwt!}})
           .then(function (response) {
             setState({
                 bid: false,

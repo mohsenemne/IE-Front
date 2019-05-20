@@ -4,17 +4,19 @@ import './index.scss';
 import Home from './views/home/Home';
 import Project from './views/project/Project';
 import Profile from './views/profile/Profile';
+import Register from './views/register/Register';
 
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Login from './views/login/Login';
 
 ReactDOM.render(
     <Router>
         <Route exact path='/' component={Home} />
         <Route exact path='/projects/:projectId' component={Project} />
         <Route exact path='/users/:username' component={Profile} />
-        {/* <Route /> */}
-        {/* <Route /> */}
+        <Route exact path='/register' component={Register} />
+        <Route exact path='/login' component={Login}/>
     </Router>, 
     document.getElementsByTagName('body')[0]
 );

@@ -1,0 +1,52 @@
+#reg-log-form{
+    display: flex;
+    justify-content: center;
+    direction: rtl;
+    .form-left{
+        img{
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 10% 50%;
+            border-bottom-left-radius: 10% 50%;
+             
+        }
+    }
+
+    .form-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        #username-input, #password-input{
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        .reg-log-btn{
+            margin-top: 0;
+            align-self: center;
+        }
+
+        p{
+            color: red;
+            margin-top: 15%;
+        }
+    }
+}
+
+
+// <div className="col-md-6 form-left">
+//                     <img src={require('src/images/logo/login.jpg')}></img>
+//                 </div>
+//                 <div className="col-md-6 form-right">
+//                     <div id="username" className="form-group">
+//                         <input id="username-input" type="text" minLength={8} className="form-control" placeholder="پسورد * "  value=""/>
+//                     </div>
+//                     <div id="pass" className="form-group">
+//                         <input id="password-input" type="password" minLength={8} className="form-control" placeholder="تکرار پسورد *"  value="" />
+//                     </div>
+//                     <input type="submit" className="reg-log-btn" value="ثبت نام" onClick={e => this.submitForm(e)} />
+//                 </div>
+// // form id="reg-log-form" className="row">
+// //                 <div className="col-md-9 form">
+// //                     <div id="pass" className="form-group">
+// //                         <input id="password-input" type="password" minLength={8} className="form-control" placeholder="پسورد * "  value=""/>
+// //                     </div>

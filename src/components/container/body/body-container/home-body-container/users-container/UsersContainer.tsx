@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import 'src/styles/container/body/body-container/home-body-container/users-container/UsersContainer.scss'
 import User from './user/User'
+import axios from 'axios';
 
 interface Props{
     users:[]
@@ -19,14 +20,16 @@ export default class UsersContainer extends Component<Props, State> {
     updateUsers(e: React.ChangeEvent<HTMLInputElement>){
         let searchKey = e.target.value
         
-        fetch(new Request('http://localhost:8080/search/users?key='+searchKey, {method: 'GET'}))
-            .then(response => {
-                if (response.ok) return response.json();
-                    return console.error();
-            })
-            .then((response:[]) => {
-                this.setState({users: response});
-            });
+        var jwt = localStorage.getItem('joboonja-jwt')
+
+        var setState = this.setState.bind(this)
+        axios.get('http://localhost:8080/search/users?key='+searchKey, {headers:{Authorization:jwt!}})
+        .then(function (response){
+            setState({users: response.data});
+        })
+        .catch(function (error){
+            console.log(error)
+        })
     }
 
     render() {

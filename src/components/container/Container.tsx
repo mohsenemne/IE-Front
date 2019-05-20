@@ -5,7 +5,6 @@ import TopBlue from 'src/components/container/top-blue/TopBlue'
 import Footer from 'src/components/container/footer/Footer'
 
 import {ProjectInfo} from 'src/interface/inteface'
-// export ProjectInfo
 
 interface UserInfo {
     username : string
@@ -56,9 +55,6 @@ export default class Container extends Component<Props, State> {
                         body = body = <Body view={view} projects={projects} users={users}/>;
                 }
                 break;
-            case 'login':
-                // code block
-                break;
             case 'profile':
                 if(user)
                     body = <Body view={view} user={user}/>;
@@ -66,13 +62,6 @@ export default class Container extends Component<Props, State> {
             case 'project':
                 if(project)
                     body = <Body view={view} project={project}/>;
-            break;
-                break;
-            case 'register':
-                // code block
-                break;              
-            default:
-              // code block
         }
     
         return (

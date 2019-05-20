@@ -43,9 +43,6 @@ export default class Body extends Component<Props, State> {
                 if(projects && users)
                     bodyContainer = <HomeBodyContainer projects={projects} users={users}/>;
                 break;
-            case 'login':
-                // code block
-                break;
             case 'profile':
                 if(user)
                     bodyContainer = <ProfileBodyContainer user={user}/>;
@@ -54,11 +51,6 @@ export default class Body extends Component<Props, State> {
                 if(project)
                     bodyContainer = <ProjectBodyContainer project={project}/>;
                 break;
-            case 'register':
-                // code block
-                break;              
-            default:
-              // code block
           }
         return (
         <div id='body'>

@@ -23,24 +23,25 @@ export default class SkillsContainer extends Component<Props, State> {
         const {username} = this.props
         const {skills} = this.props
         if(username && username != '1'){
-            fetch(new Request('http://localhost:8080/users/'+username+'/skills/endorsements', {method: 'GET'}))
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
+            var setState = this.setState.bind(this)
+            var forceUpdate = this.forceUpdate.bind(this)
+            var jwt = localStorage.getItem('joboonja-jwt')
+            axios.get('http://localhost:8080/users/'+username+'/skills/endorsements', {headers:{Authorization:jwt!}})
+            .then(function (response){
+                setState({endorsedSkills : response.data})
+                for(var i=0; i<skills.length; i++){
+                    if(response.data.includes(skills[i].name)){
+                        skills[i].endorsed = true
                     }
-                    return console.error();
-                }).then((response:string[]) => {
-                    this.setState({endorsedSkills : response})
-                    for(var i=0; i<skills.length; i++){
-                        if(response.includes(skills[i].name)){
-                            skills[i].endorsed = true
-                        }
-                        else{
-                            skills[i].endorsed = false
-                        }
+                    else{
+                        skills[i].endorsed = false
                     }
-                    this.forceUpdate();
-                });    
+                }
+                forceUpdate();
+            })
+            .catch(function (error){
+                console.log(error)
+            })    
         }
     }
     // {view == 'project'?'project-skill':'user-skill' + ' skill'}
@@ -78,8 +79,9 @@ export default class SkillsContainer extends Component<Props, State> {
         const {skills} = this.props
 
         var forceUpdate = this.forceUpdate.bind(this);
+        var jwt = localStorage.getItem('joboonja-jwt')
         if(username == '1'){
-            axios.delete('http://localhost:8080/users/'+username+'/skills?skill='+skill)
+            axios.delete('http://localhost:8080/users/'+username+'/skills?skill='+skill, {headers:{Authorization:jwt!}})
                 .then(function (response:any) {
                     if(response){
                         for( var i = 0; i < skills.length; i++){ 
@@ -97,7 +99,7 @@ export default class SkillsContainer extends Component<Props, State> {
                 });
         }
         else{
-            axios.post('http://localhost:8080/users/'+username+'/skills/endorsements?skill='+skill)
+            axios.post('http://localhost:8080/users/'+username+'/skills/endorsements?skill='+skill, null, {headers:{Authorization:jwt!}})
                 .then(function (response:any) {
                     if(response.request.response == "true"){
                         for( var i = 0; i < skills.length; i++){ 

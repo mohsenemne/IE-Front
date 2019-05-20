@@ -1,0 +1,27 @@
+input{
+    font-family: IRANSans; direction: rtl;
+}
+
+#reg-log-left{
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+    margin-top: 10% ;
+    height: auto ;
+    background: hsl(210, 17%, 93%);
+    #myTabContent{
+        margin-right: -5% ;
+        margin-left: -5% ;
+        margin-top : -5% ;
+        margin-bottom: -5%;
+        .reg-log-heading{
+            text-align: center;
+            margin-top: 8%;
+            margin-bottom: -15%;
+            color: #495057;
+        }
+        #reg-log-form{
+            padding: 10%;
+            margin-top: 10%;
+        }
+    }
+}
