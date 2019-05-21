@@ -5,12 +5,14 @@ import axios from 'axios';
 
 import {Skill} from 'src/interface/inteface'
 
+
 interface UserInfo {
     username : string
     firstName : string
     lastName : string
     jobTitle : string
     skills : Skill[]
+    profilePictureURL: string
     bio : string  
 }
 
@@ -33,7 +35,8 @@ export default class ProfileBodyContainer extends Component<Props, State> {
         const { user } = this.props
         var jwt = localStorage.getItem('joboonja-jwt')
         var setState = this.setState.bind(this)
-        if(user.username == '1'){
+
+        if(user.username == require('jsonwebtoken').decode(jwt).username as string){
             axios.get('http://localhost:8080/skills', {headers:{Authorization:jwt!}})
             .then(function (response){
                 setState({availableSkills: response.data});
@@ -93,7 +96,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
         
         let selectContainer : JSX.Element | null;
         selectContainer = null
-        if(user.username == '1' && this.state){
+        if(user.username == require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username && this.state){
             var skills = this.state.availableSkills!.map((skill:string) => {
                 return <option value={skill}>{skill}</option>
             })
@@ -116,7 +119,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
                         <p id="job-title"> {user.jobTitle}</p>
                     </div>
                     <div id="image">
-                        <img src={require('src/images/user-profiles/'+user.username+'.jpg')}/>
+                        <img src={user.profilePictureURL}/>
                     </div>
                 </div>
                 <p id='bio'>{user.bio}</p>

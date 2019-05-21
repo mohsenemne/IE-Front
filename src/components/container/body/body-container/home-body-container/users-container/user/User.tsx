@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 interface UserInfo{
     jobTitle: string
     name: string
-    id: string
+    username: string
+    profilePictureURL: string
 }
 
 interface Props{
@@ -23,10 +24,10 @@ export default class User extends Component<Props, State> {
     render() {
         const {user} = this.props;
         return (
-        <Link to={"/users/"+user.id} >
+        <Link to={"/users/"+user.username} >
             <div className="user">
                 <div className="image">
-                    <img src={require('src/images/user-profiles/'+user.id+'.jpg')}/>
+                    <img src={user.profilePictureURL}/>
                 </div>
                 <div className="details">
                     <p className="name"> {user.name} </p>

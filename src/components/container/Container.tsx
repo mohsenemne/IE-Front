@@ -11,6 +11,7 @@ interface UserInfo {
     firstName : string
     lastName : string
     jobTitle : string
+    profilePictureURL: string
     skills : []
     bio : string  
 }
@@ -21,7 +22,6 @@ interface Props{
     users?: [];
     project?: ProjectInfo;
     user?: UserInfo;
-
 }
 interface State{
     projects?: ProjectInfo[]

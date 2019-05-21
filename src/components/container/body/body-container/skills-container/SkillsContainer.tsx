@@ -22,7 +22,7 @@ export default class SkillsContainer extends Component<Props, State> {
     componentWillMount(){
         const {username} = this.props
         const {skills} = this.props
-        if(username && username != '1'){
+        if(username && username != require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username){
             var setState = this.setState.bind(this)
             var forceUpdate = this.forceUpdate.bind(this)
             var jwt = localStorage.getItem('joboonja-jwt')
@@ -44,7 +44,6 @@ export default class SkillsContainer extends Component<Props, State> {
             })    
         }
     }
-    // {view == 'project'?'project-skill':'user-skill' + ' skill'}
     render() {
         let {view} = this.props;
         let {skills} = this.props;
@@ -56,7 +55,7 @@ export default class SkillsContainer extends Component<Props, State> {
                         className={'skill-with-point ' + ((view == 'project')?'project-skill':'user-skill')}
                         onClick={() => this.handleClick(skill.name)}>
                             <span className='name'>{skill.name}</span>
-                            <span className={'point ' + ((view == 'profile')?(username=="1")?'own-skill-point':skill.endorsed?'endorsed-point':'':'')} >
+                            <span className={'point ' + ((view == 'profile')?(username==require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username)?'own-skill-point':skill.endorsed?'endorsed-point':'':'')} >
                                 <p>
                                     {skill.points}
                                 </p>
@@ -80,7 +79,7 @@ export default class SkillsContainer extends Component<Props, State> {
 
         var forceUpdate = this.forceUpdate.bind(this);
         var jwt = localStorage.getItem('joboonja-jwt')
-        if(username == '1'){
+        if(username == require('jsonwebtoken').decode(jwt).username){
             axios.delete('http://localhost:8080/users/'+username+'/skills?skill='+skill, {headers:{Authorization:jwt!}})
                 .then(function (response:any) {
                     if(response){

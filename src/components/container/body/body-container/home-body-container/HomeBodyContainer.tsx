@@ -25,8 +25,8 @@ export default class HomeBodyContainer extends Component<Props, State> {
         const {users} = this.props
         return (
             <div id='body-container'>
-            <ProjectsContainer projects={projects}/>
-            <UsersContainer users={users}/>
+                <ProjectsContainer projects={projects}/>
+                <UsersContainer users={users}/>
             </div>
         )
   }

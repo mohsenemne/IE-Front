@@ -31,7 +31,7 @@ class Home extends Component<Props, State> {
 
     console.log(jwt)
 
-    let setState = this.setState.bind(this)
+    var setState = this.setState.bind(this)
 
     axios.get('http://localhost:8080/projects', {headers:{Authorization:jwt!}})
     .then(function (response){

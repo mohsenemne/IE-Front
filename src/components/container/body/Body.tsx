@@ -12,6 +12,7 @@ interface UserInfo {
     lastName : string
     jobTitle : string
     skills : []
+    profilePictureURL: string
     bio : string  
 }
 

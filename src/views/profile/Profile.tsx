@@ -11,7 +11,9 @@ interface State {
   username : string
   firstName : string
   lastName : string
+  password: string
   jobTitle : string
+  profilePictureURL: string
   skills : []
   bio : string  
 }
