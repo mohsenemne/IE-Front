@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import 'src/fonts/iransans-fonts/fonts.css'
-import 'src/styles/Root.scss';
+import 'src/styles/Root.scss'
 
 import Navigator from 'src/components/navigator/Navigator';
 import Container from 'src/components/container/Container';
@@ -23,13 +23,8 @@ class Home extends Component<Props, State> {
     var jwt = localStorage.getItem('joboonja-jwt')
     if(jwt == null){
       document.getElementById('redirect-to-login')!.click()
+      return
     }
-    else{
-      // if invalid redirect
-      
-    }
-
-    console.log(jwt)
 
     var setState = this.setState.bind(this)
 
@@ -38,7 +33,11 @@ class Home extends Component<Props, State> {
       setState({projects: response.data});
     })
     .catch(function (error){
-      console.log(error)
+      if(error.response.status == 401 || error.response.status == 403){
+        localStorage.removeItem('joboonja-jwt')
+        alert("خطا در احراز هویت!")
+        document.getElementById("redirect-to-login")!.click()
+      }
     })
 
     axios.get('http://localhost:8080/users', {headers:{Authorization:jwt!}})
@@ -46,7 +45,11 @@ class Home extends Component<Props, State> {
       setState({users: response.data});
     })
     .catch(function (error){
-      console.log(error)
+      if(error.response.status == 401 || error.response.status == 403){
+        localStorage.removeItem('joboonja-jwt')
+        alert("خطا در احراز هویت!")
+        document.getElementById("redirect-to-login")!.click()
+      }
     })
   }
 

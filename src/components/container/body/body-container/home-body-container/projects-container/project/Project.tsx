@@ -85,6 +85,11 @@ export default class Project extends Component<Props, State> {
             }
     }
 
+    gotoProject(){
+        const {project} = this.props
+        document.getElementById("project-"+project.id)!.click()
+    }
+
     render() {
         if(!this.state)
             return (<div></div>)
@@ -97,8 +102,8 @@ export default class Project extends Component<Props, State> {
                                       :<div className="deadline deadline-reached"> مهلت تمام شده </div>
 
         return (
-        <Link to={"/projects/"+project.id} >
-            <div id={project.id} className='project'>
+        <Link className="no-decor" to={"/projects/"+project.id} >
+            <div id={project.id} className='project' onClick={this.gotoProject.bind(this)}>
                 <div className="image">
                     <img src={project.imageURL}/>
                 </div>
@@ -115,7 +120,8 @@ export default class Project extends Component<Props, State> {
                         <p>مهارت‌ها:</p>
                         <SkillsContainer view='home' skills={project.skills}/>
                     </div>
-                </div>    
+                </div>
+                <Link id={"project-"+project.id} to={"/projects/"+project.id} ></Link>
             </div>
         </Link>
         )

@@ -48,7 +48,6 @@ export default class SkillsContainer extends Component<Props, State> {
         let {view} = this.props;
         let {skills} = this.props;
         let {username} = this.props;
-        console.log(view)
         let skillsJSX = skills.map((skill:Skill) => {
             if(view != 'home')
                 return <button key={skill.name} id={skill.name} disabled={view == 'project' || skill.endorsed} 
@@ -64,7 +63,6 @@ export default class SkillsContainer extends Component<Props, State> {
             else
                 return <div key={skill.name} id={skill.name} className='skill'>{skill.name}</div>
         });
-
 
         return (
         <div id='skills-container'>

@@ -18,7 +18,7 @@ export default class Login extends Component<Props, State> {
   }
   
   render() {
-    
+    console.log("login")
     document.title = 'Login'
 
     var slideshow : JSX.Element = <ul className="slideshow">
@@ -28,6 +28,7 @@ export default class Login extends Component<Props, State> {
                                     <li><span>Image 05</span></li>
                                     <li><span>Image 06</span></li>
                                   </ul>
+    
     return (
       <div id="root" className="reg-log-root">
         {slideshow}

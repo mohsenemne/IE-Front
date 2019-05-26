@@ -1,4 +1,5 @@
 #root{
+  font-family: IRANSans;
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
 }
@@ -10,4 +11,7 @@
   align-items: center;
   padding: 3%;
   direction: ltr;
+  li{
+    list-style: none;
+  }
 }

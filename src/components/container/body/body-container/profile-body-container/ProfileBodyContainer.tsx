@@ -21,7 +21,6 @@ interface Props{
 }
 
 interface State{
-    endorsedSkills : [] | null;
     availableSkills : [] | null;
 }
 
@@ -40,15 +39,6 @@ export default class ProfileBodyContainer extends Component<Props, State> {
             axios.get('http://localhost:8080/skills', {headers:{Authorization:jwt!}})
             .then(function (response){
                 setState({availableSkills: response.data});
-            })
-            .catch(function (error){
-                console.log(error)
-            })
-        }
-        else{
-            axios.get('http://localhost:8080/users/'+user.username+'/endorsments', {headers:{Authorization:jwt!}})
-            .then(function (response){
-                setState({endorsedSkills: response.data});
             })
             .catch(function (error){
                 console.log(error)
@@ -97,6 +87,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
         let selectContainer : JSX.Element | null;
         selectContainer = null
         if(user.username == require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username && this.state){
+            console.log("here")
             var skills = this.state.availableSkills!.map((skill:string) => {
                 return <option value={skill}>{skill}</option>
             })

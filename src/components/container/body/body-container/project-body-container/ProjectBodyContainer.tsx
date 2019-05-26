@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import 'src/styles/container/body/body-container/project-body-container/ProjectBodyContainer.scss'
 import 'src/icons/font/flaticon.css'
 import SkillsContainer from 'src/components/container/body/body-container/skills-container/SkillsContainer'
-import Project from 'src/views/project/Project';
 import axios from 'axios'
 
 import {ProjectInfo} from 'src/interface/inteface'
@@ -167,7 +166,7 @@ export default class ProjectBodyContainer extends Component<Props, State> {
                         {deadline}
                         <p id="budget" className="flaticon-money-bag"><b> بودجه: {toPersianDigits(project.budget.toString())} تومان</b></p>
                         {winner}
-                        <h3> توضیحات</h3>
+                        <h4> توضیحات</h4>
                         <p id="description"> {project.description} </p>
                     </div>
                     <div id="image">

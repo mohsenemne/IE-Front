@@ -31,7 +31,6 @@ export default class Container extends Component<Props, State> {
     constructor(props : Props){
         super(props);
         this.setState({projects: this.props.projects})
-        console.log(this.state)
     }
 
     updateProjects(projects: ProjectInfo[]){

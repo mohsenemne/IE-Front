@@ -9,12 +9,12 @@ export default class Navigator extends Component {
     document.getElementById('redirect-to-login')!.click()
   }
   render() {
-
+    var username = require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username
     return (
     <nav id="top-bar">
         <Link to="/" id="logo"> <img src={require('src/images/logo/logo v1.png')}/> </Link>
         <div id="links">
-            <Link to="/users/1" id="profile"><p> حساب کاربری </p></Link>
+            <Link to={"/users/" + username} id="profile"><p> حساب کاربری </p></Link>
             <a id="exit" onClick={this.deleteJWT}><p> خروج </p></a>
             <Link id='redirect-to-login' to='/login'/>
         </div>

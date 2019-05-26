@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    direction: rtl;
+    text-align: justify;
     #job-info{
         display: flex;
         flex-direction: row-reverse;
@@ -46,8 +48,8 @@
             #winner{
                 color: green;
             }
-            h3 {
-                margin-bottom: 0.2em;
+            h4 {
+                margin-top: 1rem;
             }
             #description{
                 margin-top: 0em;
@@ -81,16 +83,13 @@
         justify-content: flex-start;
         border-bottom: 1px #d3d3d3 solid;
         #skills-title {
-            margin-bottom: 0.5em;
-            margin-right: 1em;
-            margin-left: 1em;
+            margin: 1rem;
             color: #69A7A1;
+            margin-bottom: 0;
         }
         #skill-items-container {
             direction: ltr;
-            margin-right: 1em;
-            margin-left: 1em;
-            margin-bottom: 3%;
+            margin: 1rem;
         }
     }
     #offer {

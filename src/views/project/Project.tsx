@@ -33,7 +33,11 @@ export default class Project extends Component<any, State>{
       setState({project: response.data});
     })
     .catch(function (error){
-      console.log(error)
+      if(error.response.status == 401 || error.response.status == 403){
+        localStorage.removeItem('joboonja-jwt')
+        alert("خطا در احراز هویت!")
+        document.getElementById("redirect-to-login")!.click()
+      }
     });
   }
 
