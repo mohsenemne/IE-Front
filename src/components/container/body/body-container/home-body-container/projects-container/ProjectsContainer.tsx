@@ -12,9 +12,6 @@ interface State{
 }
 
 export default class ProjectsContainer extends Component<Props, State> {
-    constructor(props : Props){
-        super(props);
-    }
     render() {
         const {projects} = this.props;
         const projectsJSX = projects.map((p:object) => {

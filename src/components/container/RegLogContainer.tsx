@@ -15,10 +15,7 @@ interface Props{
 }
 
 export default class RegLogContainer extends Component<Props, State> {
-    constructor(props: Props){
-        super(props)
-    }
-
+    
     render() {
         const {view} = this.props
         const {history} = this.props

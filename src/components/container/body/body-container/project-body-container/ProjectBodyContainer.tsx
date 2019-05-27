@@ -33,9 +33,6 @@ function toPersianDigits(str:string){
 }
 
 export default class ProjectBodyContainer extends Component<Props, State> {
-    constructor(props : Props){
-        super(props)
-    }
     componentDidMount() {
         const {project} = this.props
 

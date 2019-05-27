@@ -18,9 +18,6 @@ interface State{
 }
 
 export default class User extends Component<Props, State> {
-    constructor(props : Props){
-        super(props)
-    }    
     render() {
         const {user} = this.props;
         return (

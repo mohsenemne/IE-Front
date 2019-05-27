@@ -25,17 +25,12 @@ interface State{
 }
 
 export default class ProfileBodyContainer extends Component<Props, State> {
-    constructor(props : Props){
-        super(props);
-
-    }
-    
     componentDidMount() {
         const { user } = this.props
         var jwt = localStorage.getItem('joboonja-jwt')
         var setState = this.setState.bind(this)
 
-        if(user.username == require('jsonwebtoken').decode(jwt).username as string){
+        if(user.username === require('jsonwebtoken').decode(jwt).username as string){
             axios.get('http://localhost:8080/skills', {headers:{Authorization:jwt!}})
             .then(function (response){
                 setState({availableSkills: response.data});
@@ -52,7 +47,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
         var sel = document.getElementById('new-skill-select')! as HTMLSelectElement
         let newSkill = sel.value
         
-        if(newSkill == ""){
+        if(newSkill === ""){
             alert("یک مهارت انتخاب کنید!")
             e.preventDefault()
             return
@@ -68,7 +63,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
                     user.skills.push({name: newSkill, points: 0})
                     let i;
                     for(i=0; i<availableSkills!.length; i++){
-                        if(availableSkills![i] == newSkill)
+                        if(availableSkills![i] === newSkill)
                             availableSkills!.splice(i, 1)
                     }
                     sel.selectedIndex = 0
@@ -86,7 +81,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
         
         let selectContainer : JSX.Element | null;
         selectContainer = null
-        if(user.username == require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username && this.state){
+        if(user.username === require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username && this.state){
             console.log("here")
             var skills = this.state.availableSkills!.map((skill:string) => {
                 return <option value={skill}>{skill}</option>

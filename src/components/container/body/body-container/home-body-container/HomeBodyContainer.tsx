@@ -17,9 +17,6 @@ interface State{
 
 
 export default class HomeBodyContainer extends Component<Props, State> {
-    constructor(props : Props){
-        super(props);
-    }
     render() {
         const {projects} = this.props
         const {users} = this.props

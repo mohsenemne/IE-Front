@@ -15,14 +15,11 @@ interface State{
 }
 
 export default class SkillsContainer extends Component<Props, State> {
-    constructor(props : Props){
-        super(props);
-    }
-
+    
     componentWillMount(){
         const {username} = this.props
         const {skills} = this.props
-        if(username && username != require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username){
+        if(username && username !== require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username){
             var setState = this.setState.bind(this)
             var forceUpdate = this.forceUpdate.bind(this)
             var jwt = localStorage.getItem('joboonja-jwt')
@@ -49,12 +46,12 @@ export default class SkillsContainer extends Component<Props, State> {
         let {skills} = this.props;
         let {username} = this.props;
         let skillsJSX = skills.map((skill:Skill) => {
-            if(view != 'home')
-                return <button key={skill.name} id={skill.name} disabled={view == 'project' || skill.endorsed} 
-                        className={'skill-with-point ' + ((view == 'project')?'project-skill':'user-skill')}
+            if(view !== 'home')
+                return <button key={skill.name} id={skill.name} disabled={view === 'project' || skill.endorsed} 
+                        className={'skill-with-point ' + ((view === 'project')?'project-skill':'user-skill')}
                         onClick={() => this.handleClick(skill.name)}>
                             <span className='name'>{skill.name}</span>
-                            <span className={'point ' + ((view == 'profile')?(username==require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username)?'own-skill-point':skill.endorsed?'endorsed-point':'':'')} >
+                            <span className={'point ' + ((view === 'profile')?(username === require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username)?'own-skill-point':skill.endorsed?'endorsed-point':'':'')} >
                                 <p>
                                     {skill.points}
                                 </p>
@@ -77,7 +74,7 @@ export default class SkillsContainer extends Component<Props, State> {
 
         var forceUpdate = this.forceUpdate.bind(this);
         var jwt = localStorage.getItem('joboonja-jwt')
-        if(username == require('jsonwebtoken').decode(jwt).username){
+        if(username === require('jsonwebtoken').decode(jwt).username){
             axios.delete('http://localhost:8080/users/'+username+'/skills?skill='+skill, {headers:{Authorization:jwt!}})
                 .then(function (response:any) {
                     if(response){
@@ -98,7 +95,7 @@ export default class SkillsContainer extends Component<Props, State> {
         else{
             axios.post('http://localhost:8080/users/'+username+'/skills/endorsements?skill='+skill, null, {headers:{Authorization:jwt!}})
                 .then(function (response:any) {
-                    if(response.request.response == "true"){
+                    if(response.request.response === "true"){
                         for( var i = 0; i < skills.length; i++){ 
                             if (skills[i].name === skill) {
                                 skills[i].points += 1;

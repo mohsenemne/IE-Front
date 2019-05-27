@@ -18,23 +18,18 @@ interface Props{
 }
 
 export default class LoginForm extends Component<Props, State> {
-    constructor(props: Props){
-        super(props)
-    }
-
     login(user: UserInfo){
-        var jwt = localStorage.getItem('joboonja-jwt')
         axios.post('http://localhost:8080/login', user)
           .then(function (response) {
             const {status} = response
-            if(status == 200){
+            if(status === 200){
                 const {data} = response
                 localStorage.setItem('joboonja-jwt', data)
                 document.getElementById('redirect-to-home')!.click()
             }
           })
           .catch(function (error) {
-            if(error.response.status == 403){
+            if(error.response.status === 403){
                 alert('نام کاربری یا رمز عبور اشتباه است.')
             }
             else{

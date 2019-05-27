@@ -28,9 +28,6 @@ interface State{
 }
 
 export default class Body extends Component<Props, State> {
-    constructor(props : Props){
-        super(props);
-    }
     render() {
         let bodyContainer:JSX.Element = <div></div>;
         const {view} = this.props;

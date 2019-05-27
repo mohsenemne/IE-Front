@@ -31,10 +31,6 @@ function toPersianDigits(str:string){
 }
 
 export default class Project extends Component<Props, State> {
-    constructor(props : Props){
-        super(props);
-    }
-
     msToString(ms : number){
         if(ms > 0){
             let t : Time = {year : Math.floor(ms/31536000000), month : Math.floor(ms/2628000000)%12, 

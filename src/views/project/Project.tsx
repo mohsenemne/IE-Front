@@ -13,19 +13,12 @@ interface State {
 }
 
 export default class Project extends Component<any, State>{
-  constructor(props : any){
-    super(props);
-  }
-
   componentDidMount() {
     var jwt = localStorage.getItem('joboonja-jwt')
     if(jwt == null){
       document.getElementById('redirect-to-login')!.click()
     }
-    else{
-      // if invalid redirect
-      
-    }
+    
     const {projectId} = this.props.match.params
     var setState = this.setState.bind(this)
     axios.get('http://localhost:8080/projects/'+projectId, {headers:{Authorization:jwt!}})
@@ -33,7 +26,7 @@ export default class Project extends Component<any, State>{
       setState({project: response.data});
     })
     .catch(function (error){
-      if(error.response.status == 401 || error.response.status == 403){
+      if(error.response.status === 401 || error.response.status === 403){
         localStorage.removeItem('joboonja-jwt')
         alert("خطا در احراز هویت!")
         document.getElementById("redirect-to-login")!.click()

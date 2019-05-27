@@ -13,10 +13,6 @@ interface State{
 }
 
 export default class TopBlue extends Component<Props, State> {
-    constructor(props : Props){
-        super(props);
-    }
-
     searchSubmit(e : React.FormEvent<HTMLFormElement>){
         let searchKey = (document.getElementById("project-search-input")! as HTMLInputElement).value
         
@@ -35,7 +31,7 @@ export default class TopBlue extends Component<Props, State> {
     }
 
     render() {
-        if(this.props.view == 'home'){
+        if(this.props.view === 'home'){
             return (
             <div className="home-top-blue">
                 <div id="head-container">
