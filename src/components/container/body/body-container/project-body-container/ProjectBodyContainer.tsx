@@ -52,7 +52,7 @@ export default class ProjectBodyContainer extends Component<Props, State> {
             })
             console.log(usernames)
             let b;
-            if(usernames.includes('1')){
+            if(usernames.includes(require('jsonwebtoken').decode(jwt).username)){
                 b = false
             }
             else{

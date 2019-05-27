@@ -9,7 +9,10 @@ export default class Navigator extends Component {
     document.getElementById('redirect-to-login')!.click()
   }
   render() {
-    var username = require('jsonwebtoken').decode(localStorage.getItem('joboonja-jwt')).username
+    var jwt = localStorage.getItem('joboonja-jwt')
+    var username : string = ""
+    if(jwt)
+      username = require('jsonwebtoken').decode(jwt).username
     return (
     <nav id="top-bar">
         <Link to="/" id="logo"> <img src={require('src/images/logo/logo v1.png')}/> </Link>
