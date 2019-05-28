@@ -21,7 +21,7 @@ export default class Project extends Component<any, State>{
     
     const {projectId} = this.props.match.params
     var setState = this.setState.bind(this)
-    axios.get('http://localhost:8080/projects/'+projectId, {headers:{Authorization:jwt!}})
+    axios.get('http://spring-app:8080/projects/'+projectId, {headers:{Authorization:jwt!}})
     .then(function (response){
       setState({project: response.data});
     })

@@ -19,7 +19,7 @@ interface Props{
 
 export default class LoginForm extends Component<Props, State> {
     login(user: UserInfo){
-        axios.post('http://localhost:8080/login', user)
+        axios.post('http://spring-app:8080/login', user)
           .then(function (response) {
             const {status} = response
             if(status === 200){

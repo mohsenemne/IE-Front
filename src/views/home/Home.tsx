@@ -28,7 +28,7 @@ class Home extends Component<Props, State> {
 
     var setState = this.setState.bind(this)
 
-    axios.get('http://localhost:8080/projects', {headers:{Authorization:jwt!}})
+    axios.get('http://spring-app:8080/projects', {headers:{Authorization:jwt!}})
     .then(function (response){
       setState({projects: response.data});
     })
@@ -40,7 +40,7 @@ class Home extends Component<Props, State> {
       }
     })
 
-    axios.get('http://localhost:8080/users', {headers:{Authorization:jwt!}})
+    axios.get('http://spring-app:8080/users', {headers:{Authorization:jwt!}})
     .then(function (response){
       setState({users: response.data});
     })

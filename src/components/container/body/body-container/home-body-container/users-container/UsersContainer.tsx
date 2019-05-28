@@ -23,7 +23,7 @@ export default class UsersContainer extends Component<Props, State> {
         var jwt = localStorage.getItem('joboonja-jwt')
 
         var setState = this.setState.bind(this)
-        axios.get('http://localhost:8080/search/users?key='+searchKey, {headers:{Authorization:jwt!}})
+        axios.get('http://spring-app:8080/search/users?key='+searchKey, {headers:{Authorization:jwt!}})
         .then(function (response){
             setState({users: response.data});
         })

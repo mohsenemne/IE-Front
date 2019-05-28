@@ -31,7 +31,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
         var setState = this.setState.bind(this)
 
         if(user.username === require('jsonwebtoken').decode(jwt).username as string){
-            axios.get('http://localhost:8080/skills', {headers:{Authorization:jwt!}})
+            axios.get('http://spring-app:8080/skills', {headers:{Authorization:jwt!}})
             .then(function (response){
                 setState({availableSkills: response.data});
             })
@@ -56,7 +56,7 @@ export default class ProfileBodyContainer extends Component<Props, State> {
 
         var jwt = localStorage.getItem('joboonja-jwt')
 
-        axios.put('http://localhost:8080/users/'+this.props.user.username+'/skills?skill='+newSkill, null, {headers:{Authorization:jwt!}})
+        axios.put('http://spring-app:8080/users/'+this.props.user.username+'/skills?skill='+newSkill, null, {headers:{Authorization:jwt!}})
             .then(function (response:any) {
                 console.log(response)
                 if(response.request.response){

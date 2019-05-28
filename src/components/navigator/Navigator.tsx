@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import 'src/styles/navigator/Navigator.scss'
 import { Link } from 'react-router-dom';
-import { existsTypeAnnotation } from '@babel/types';
 
 export default class Navigator extends Component {
   deleteJWT(){

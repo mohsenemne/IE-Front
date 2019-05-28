@@ -42,7 +42,7 @@ export default class ProjectBodyContainer extends Component<Props, State> {
         var jwt = localStorage.getItem('joboonja-jwt')
         var setState = this.setState.bind(this)
         var countDown = this.countDown.bind(this)
-        axios.get('http://localhost:8080/projects/'+project.id+'/bids', {headers:{Authorization:jwt!}})
+        axios.get('http://spring-app:8080/projects/'+project.id+'/bids', {headers:{Authorization:jwt!}})
         .then(function (response){
             var usernames = response.data.map((bid:any) => {
                 return bid.biddingUser.username;
@@ -197,7 +197,7 @@ export default class ProjectBodyContainer extends Component<Props, State> {
 
         var jwt = localStorage.getItem('joboonja-jwt')
 
-        axios.put('http://localhost:8080/projects/'+project.id+'/bids?bidAmount='+bidAmount, null, {headers:{Authorization:jwt!}})
+        axios.put('http://spring-app:8080/projects/'+project.id+'/bids?bidAmount='+bidAmount, null, {headers:{Authorization:jwt!}})
           .then(function (response) {
             setState({
                 bid: false,
