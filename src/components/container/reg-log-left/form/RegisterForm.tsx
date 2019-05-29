@@ -52,7 +52,7 @@ export default class RegisterForm extends Component<Props, State> {
     register(user: UserInfo){
         let forceUpdate = this.forceUpdate.bind(this)
         console.log('sdfd')
-        axios.post('http://spring-app:8080/register', user)
+        axios.post('http://localhost:8080/register', user)
           .then(function (response) {
             const {status} = response
             if(status == 200){
@@ -70,7 +70,7 @@ export default class RegisterForm extends Component<Props, State> {
             }
           })
           .catch(function (error) {
-            alert('ختا در شبکه!')
+            alert('خطا در شبکه!')
             console.log(error);
           });
         return false

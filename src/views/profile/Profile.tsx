@@ -31,7 +31,7 @@ export default class User extends Component<any, State>{
 
     const {username} = this.props.match.params
     var setState = this.setState.bind(this)
-    axios.get('http://spring-app:8080/users/'+username, {headers:{Authorization:jwt!}})
+    axios.get('http://localhost:8080/users/'+username, {headers:{Authorization:jwt!}})
     .then(function (response){
       setState(response.data);
     })

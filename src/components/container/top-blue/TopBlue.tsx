@@ -18,7 +18,7 @@ export default class TopBlue extends Component<Props, State> {
         
         var jwt = localStorage.getItem('joboonja-jwt')
         const {props} = this
-        axios.get('http://spring-app:8080/search/projects?key='+searchKey, {headers:{Authorization:jwt!}})
+        axios.get('http://localhost:8080/search/projects?key='+searchKey, {headers:{Authorization:jwt!}})
         .then(function (response){
             props.updateProjects!(response.data)
         })

@@ -23,7 +23,7 @@ export default class SkillsContainer extends Component<Props, State> {
             var setState = this.setState.bind(this)
             var forceUpdate = this.forceUpdate.bind(this)
             var jwt = localStorage.getItem('joboonja-jwt')
-            axios.get('http://spring-app:8080/users/'+username+'/skills/endorsements', {headers:{Authorization:jwt!}})
+            axios.get('http://localhost:8080/users/'+username+'/skills/endorsements', {headers:{Authorization:jwt!}})
             .then(function (response){
                 setState({endorsedSkills : response.data})
                 for(var i=0; i<skills.length; i++){
@@ -75,7 +75,7 @@ export default class SkillsContainer extends Component<Props, State> {
         var forceUpdate = this.forceUpdate.bind(this);
         var jwt = localStorage.getItem('joboonja-jwt')
         if(username === require('jsonwebtoken').decode(jwt).username){
-            axios.delete('http://spring-app:8080/users/'+username+'/skills?skill='+skill, {headers:{Authorization:jwt!}})
+            axios.delete('http://localhost:8080/users/'+username+'/skills?skill='+skill, {headers:{Authorization:jwt!}})
                 .then(function (response:any) {
                     if(response){
                         for( var i = 0; i < skills.length; i++){ 
@@ -93,7 +93,7 @@ export default class SkillsContainer extends Component<Props, State> {
                 });
         }
         else{
-            axios.post('http://spring-app:8080/users/'+username+'/skills/endorsements?skill='+skill, null, {headers:{Authorization:jwt!}})
+            axios.post('http://localhost:8080/users/'+username+'/skills/endorsements?skill='+skill, null, {headers:{Authorization:jwt!}})
                 .then(function (response:any) {
                     if(response.request.response === "true"){
                         for( var i = 0; i < skills.length; i++){ 
